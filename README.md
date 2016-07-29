@@ -1,5 +1,8 @@
 # easy-config
 
+[![Clojars Project](https://img.shields.io/clojars/v/easy-config.svg)](https://clojars.org/easy-config)
+[![Dependencies Status](https://jarkeeper.com/agilecreativity/easy-config/status.svg)](https://jarkeeper.com/agilecreativity/easy-config)
+
 A Clojure library designed to load simple config in the edn format.
 
 ## Usage
