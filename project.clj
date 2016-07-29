@@ -1,4 +1,4 @@
-(defproject easy-config "0.1.0"
+(defproject easy-config "0.1.1"
   :description "Simple configuration library using edn format"
   :url "https://github.com/agilecreativity/easy-config"
   :license {:name "Eclipse Public License"

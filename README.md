@@ -10,7 +10,7 @@ A Clojure library designed to load simple config in the edn format.
 - Leiningen
 
 ```
-[easy-config "0.1.0"]
+[easy-config "0.1.1"]
 ```
 
 Example Usage:
