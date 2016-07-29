@@ -1,0 +1,8 @@
+[{:id "github"
+  :site-url "https://github.com/login"
+  :username "awesome_dev"
+  :password "SECRET-PASSWORD"}
+ {:id "github-work"
+  :site-url "https://github.com/login"
+  :username "awesome-coder"
+  :password "EVENT-MORE-SECRET"}]
