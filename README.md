@@ -10,28 +10,28 @@ A Clojure library designed to load simple config in the edn format.
 - Leiningen
 
 ```
-[easy-config "0.1.1"]
+[easy-config "0.1.2"]
 ```
-
-Example Usage:
+### Example Usage:
 
 ```clojure
-# from `core.clj`
-(defn load-config
-  "Load the config having a given id from a given config-file"
-  [id config-file]
-  (first (lookup-config id config-file)))
+;; To load all config
+(all-config "./sample-config.edn")
+
+;; To load the first matching config having a given config-id
+(load-config "~/Dropbox/sample-config.edn" "github")
 ```
 
-Just call `(load-config "./sample-config.edn" "github")`
-
 ### Sample config file in edn format
+
+See [official edn format documentation](https://github.com/edn-format/edn) for detail.
 
 ```clojure
 [{:id "github"
   :site-url "https://github.com/login"
   :username "awesome_dev"
   :password "SECRET-PASSWORD"}
+  :nested-item {:some-key 123, :other-key "abc"}}
  {:id "github-work"
   :site-url "https://github.com/login"
   :username "awesome-coder"

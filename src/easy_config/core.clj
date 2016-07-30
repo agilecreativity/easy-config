@@ -5,11 +5,21 @@
             [me.raynes.fs :as fs])
   (:gen-class))
 
-(defn- exit [status msg]
+(declare all-config)
+(declare load-config)
+(declare exit)
+
+(defn- find-by-id
+  "Find and return the first matching config entry by a given config-id"
+  [filename config-id]
+  (filter #(= (:id %) config-id) (all-config filename)))
+
+(defn exit [status msg]
   (println msg)
   (System/exit status))
 
-(defn- read-config
+(defn all-config
+  "Read and return edn configuration from a given filename"
   [filename]
   (let [file-path (-> filename
                       fs/expand-home
@@ -18,13 +28,7 @@
       (edn/read-string (slurp file-path))
       (exit 1 (str "Invalid config file :" file-path)))))
 
-(defn- lookup-config
-  "Find and return the first matching config entry by a given id"
-  [filename label]
-  (filter #(= (:id %) label) (read-config filename)))
-
-;; Load config from a given file
 (defn load-config
-  "Load the config having a given id from a given config-file"
-  [config-file id]
-  (first (lookup-config config-file id)))
+  "Load the config having a given config-id from a given config-file"
+  [config-file config-id]
+  (first (find-by-id config-file config-id)))
